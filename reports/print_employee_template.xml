@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<template id="employee_report">
+    <t t-call="web.html_container">
+    <t t-foreach="docs" t-as="o">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <table class="table table-condensed" style="border: 3px solid black !important;">
+                                <tr>
+                                    <td width="40%">
+                                        <p style="text-align:center;padding-top:10px;">
+                                            <img t-if="o.emp_image"
+                                                 t-att-src="'data:image/png;base64,%s' % to_text(o.emp_image)"
+                                                 height="140" border="1" width="120"/>
+                                        </p>
+                                    </td>
+                                    <td width="60%">
+                                        <table >
+                                            <tr>
+                                                <td colspan="3" class="text-center">
+                                                    <span t-field="o.name"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span style="margin-right:3px">
+                                                        <strong>EMP Date:</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span>:</span>
+                                                </td>
+                                                <td>
+                                                    <span t-field="o.empdate"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span style="margin-right:3px">
+                                                        <strong>Birth date:</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span>:</span>
+                                                </td>
+                                                <td>
+                                                    <span t-field="o.birthdate"/>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </td>
+                                </tr>
+                            </table>
+                            <table >
+                                 <tr>
+                                            <td>
+                                                <span style="margin-right:3px">
+                                                        <strong>Address:</strong>
+                                                    </span>
+                                            </td>
+                                            <td>
+                                                    <span t-field="o.address"/>
+                                                </td>
+                                 </tr>
+                            </table>
+                            <div style="margin-top:30px"></div>
+                            <table>
+
+                                <tr>
+                                            <td>
+                                                <span style="margin-right:3px">
+                                                        <strong>Mobile:</strong>
+                                                    </span>
+                                            </td>
+                                            <td>
+                                                    <span t-field="o.mobile1"/>
+                                                </td>
+                                 </tr>
+                            </table>
+
+                            <div style="margin-top:30px"></div>
+                            <table>
+
+                                 <tr>
+                                                <td>
+                                                    <span style="margin-right:3px">
+                                                            <strong>Nat.ID:</strong>
+                                                        </span>
+                                                </td>
+                                                <td>
+                                                        <span t-field="o.NatID"/>
+                                                    </td>
+                                 </tr>
+                            </table>
+
+                            <div style="margin-top:30px"></div>
+
+                            <table>
+
+                                 <tr>
+                                                <td>
+                                                    <span style="margin-right:3px">
+                                                            <strong>Salary:</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                        <span t-field="o.salary"/>
+                                                    </td>
+                                 </tr>
+                            </table>
+
+                            <div style="margin-top:30px"></div>
+
+                            <table>
+
+                                 <tr>
+                                                <td>
+                                                    <span style="margin-right:3px">
+                                                            <strong>Job Title:</strong>
+                                                        </span>
+                                                </td>
+                                                <td>
+                                                        <span t-field="o.jobtitle"/>
+                                                    </td>
+                                 </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </t>
+    </template>
+
+</odoo>

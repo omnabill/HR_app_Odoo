@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <record id="view_employees_tree" model="ir.ui.view">
+        <field name="name">config.employees.tree</field>
+        <field name="model">hr.employees</field>
+        <field name="arch" type="xml">
+            <tree>
+                    <field name="name"/>
+                <!--widget="boolean_toggle"-->
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_employees_form" model="ir.ui.view">
+        <field name="name">config.employees.form</field>
+        <field name="model">hr.employees</field>
+        <field name="arch" type="xml">
+            <form>
+
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="emp_image" widget='image' class="oe_avatar oe_left" options='{"preview_image": "image_medium"}'/>
+
+
+                        </group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="email"/>
+                            <field name="department"/>
+                        </group>
+                         <notebook>
+                            <page string="Personal Info" name="Personal_Info">
+                              <group>
+                              <field name="birthdate"/>
+                              <field name="city_id"/>
+                              <field name="address"/>
+                              <field name="NatID"/>
+                              <field name="qualification"/>
+                              <field name="mobile1"/>
+                              <field name="mobile2"/>
+                            </group>
+                            </page>
+
+                            <page string="Employment Info" name="Employment_Info">
+                             <group>
+                              <field name="insnumber" widget="char"/>
+                              <field name="bankacc"/>
+                              <field name="empstatus"/>
+                              <field name="salary"/>
+                              <field name="empdate"/>
+                              <field name="jobtitle"/>
+                            </group>
+                            </page>
+
+         </notebook>
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="hr_employees_action" model="ir.actions.act_window">
+        <field name="name">Employees</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.employees</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Employee
+            </p>
+        </field>
+    </record>
+
+</odoo>

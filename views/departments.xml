@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <record id="view_departments_tree" model="ir.ui.view">
+        <field name="name">config.departments.tree</field>
+        <field name="model">hr.departments</field>
+        <field name="arch" type="xml">
+            <tree>
+                    <field name="name"/>
+                    <field name="minemp"/>
+                    <field name="perc" widget="progressbar" />
+            </tree>
+        </field>
+    </record>
+
+    <!--<record id="department_kanban_view" model="ir.ui.view">-->
+            <!--<field name="name">hr.departments.kanban</field>-->
+            <!--<field name="model">hr.departments</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<kanban class="o_department_kanban">-->
+                    <!--<field name="name"/>-->
+                    <!--<field name="parent_id"/>-->
+
+                    <!--<field name="manager_id"/>-->
+                    <!--<field name="minemp"/>-->
+                    <!--<templates>-->
+                        <!--<t t-name="kanban-box">-->
+                            <!--<div t-attf-class="oe_kanban_global_click">-->
+                                <!--<div class="o_kanban_image">-->
+                                    <!--<field name="photo" nolabel="1" widget="image" class="oe_right oe_avatar"/>-->
+                                <!--</div>-->
+                                <!--<div class="oe_kanban_details">-->
+                                    <!--<strong class="o_kanban_record_title">-->
+
+                                    <!--<field name="name"/>-->
+                                    <!--</strong>-->
+
+
+                                    <!--<div t-if="record.minemp.value">-->
+                                        <!--<t t-esc="record.minemp.value"/>-->
+                                    <!--</div>-->
+
+                                    <!--<field name="perc" widget="gauge" options="{'max_field':100}" style="width:120px;height:90px;cursor:pointer"/>-->
+
+
+
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</t>-->
+                    <!--</templates>-->
+                <!--</kanban>-->
+            <!--</field>-->
+        <!--</record>-->
+
+
+    <record id="view_departments_form" model="ir.ui.view">
+        <field name="name">config.departments.form</field>
+        <field name="model">hr.departments</field>
+        <field name="arch" type="xml">
+            <form>
+
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="minemp" widget="char"/>
+                        </group>
+                        <group>
+                            <field name="parent_id"/>
+                            <field name="manager_id"/>
+                            <field name="photo"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="hr_departments_action" model="ir.actions.act_window">
+        <field name="name">Departments</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.departments</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Department
+            </p>
+        </field>
+    </record>
+
+</odoo>

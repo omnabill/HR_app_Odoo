@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <menuitem id="hr_root"
+              name="HR_Test"
+              sequence="10"/>
+
+    <!--  2th lvl Configuration  -->
+    <menuitem id="hr_employees"
+              name="Employees"
+              parent="hr_root"
+              action="hr_employees_action"
+              sequence="1"/>
+    <menuitem id="hr_departments"
+              name="Departments"
+              parent="hr_root"
+              action="hr_departments_action"
+              sequence="2"/>
+    <menuitem id="hr_qualifications"
+              name="Qualifications"
+              parent="hr_root"
+              action="hr_qualifications_action"
+              sequence="3"/>
+    <menuitem id="hr_jobtitles"
+              name="Job Titles"
+              parent="hr_root"
+              action="hr_jobtitles_action"
+              sequence="4"/>
+</odoo>

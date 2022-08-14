@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_employees,access.hr.employees,model_hr_employees,,1,1,1,1
+access_hr_departments,access.hr.departments,model_hr_departments,,1,1,1,1
+access_hr_qualifications,access.hr.qualifications,model_hr_qualifications,,1,1,1,1
+access_hr_jobtitles,access.hr.jobtitles,model_hr_jobtitles,,1,1,1,1
